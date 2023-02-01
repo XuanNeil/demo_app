@@ -1,114 +1,62 @@
-import Image from 'next/image'
-import { Inter } from '@next/font/google'
 import styles from '@/components/templates/home/styled.module.css';
+import {useModal} from "@/components/molecules/modal/hooks";
+import {Modal} from "@/components/molecules/modal";
+import {DiedCard} from "@/components/templates/home/components/diedCard";
+import {InJuryCard} from "@/components/templates/home/components/injuryCard";
+import {NotWordCard} from "@/components/templates/home/components/notWordCard";
+import {TroubleCard} from "@/components/templates/home/components/troubleCard";
+import {ChildCard} from "@/components/templates/home/components/childCard";
+import Image from "next/image";
+import {images} from "@/public/images";
+import {ModalHeadStyled, TextHeadStyled} from "@/components/molecules/modal/styled";
+import React from "react";
 
-const inter = Inter({ subsets: ['latin'] })
+const data = {
+    whenHeDied: {
+        tags: ["遺族基礎年金", "遺族基礎年金"],
+        price: 16
+    },
+    illnessOrInjury: {
+        tags: ["高額療養費制度"],
+        price: 11
+    },
+    notWork: {
+        tags: ["傷病手当金"],
+        price: 20
+    },
+    whenInTrouble: {
+        tags: ["障害基礎年金", "障害厚生年金"],
+        price: 20
+    },
+    child: {
+        tags: ["出産育児一時金", "出産手当金", "育児休業給付金"],
+        price: 294
+    }
+};
 
 export function Home() {
+
+    const {isOpen, onOpen, onClose} = useModal();
+
     return (
-            <main className={styles.main}>
-                <div className={styles.description}>
-                    <p>
-                        Get started by editing&nbsp;
-                        <code className={styles.code}>src/pages/index.tsx</code>
-                    </p>
-                    <div>
-                        <a
-                            href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            By{' '}
-                            <Image
-                                src="/vercel.svg"
-                                alt="Vercel Logo"
-                                className={styles.vercelLogo}
-                                width={100}
-                                height={24}
-                                priority
-                            />
-                        </a>
-                    </div>
-                </div>
-
-                <div className={styles.center}>
-                    <Image
-                        className={styles.logo}
-                        src="/next.svg"
-                        alt="Next.js Logo"
-                        width={180}
-                        height={37}
-                        priority
-                    />
-                    <div className={styles.thirteen}>
-                        <Image
-                            src="/thirteen.svg"
-                            alt="13"
-                            width={40}
-                            height={31}
-                            priority
-                        />
-                    </div>
-                </div>
-
-                <div className={styles.grid}>
-                    <a
-                        href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-                        className={styles.card}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        <h2 className={inter.className}>
-                            Docs <span>-&gt;</span>
-                        </h2>
-                        <p className={inter.className}>
-                            Find in-depth information about Next.js features and&nbsp;API.
-                        </p>
-                    </a>
-
-                    <a
-                        href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-                        className={styles.card}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        <h2 className={inter.className}>
-                            Learn <span>-&gt;</span>
-                        </h2>
-                        <p className={inter.className}>
-                            Learn about Next.js in an interactive course with&nbsp;quizzes!
-                        </p>
-                    </a>
-
-                    <a
-                        href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-                        className={styles.card}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        <h2 className={inter.className}>
-                            Templates <span>-&gt;</span>
-                        </h2>
-                        <p className={inter.className}>
-                            Discover and deploy boilerplate example Next.js&nbsp;projects.
-                        </p>
-                    </a>
-
-                    <a
-                        href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-                        className={styles.card}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        <h2 className={inter.className}>
-                            Deploy <span>-&gt;</span>
-                        </h2>
-                        <p className={inter.className}>
-                            Instantly deploy your Next.js site to a shareable URL
-                            with&nbsp;Vercel.
-                        </p>
-                    </a>
-                </div>
-            </main>
+        <main className={styles.main}>
+            <button onClick={onOpen}>Show Modal</button>
+            <Modal isOpen={isOpen} onClose={onClose}>
+                <>
+                    <ModalHeadStyled>
+                        <Image src={images.leftPublicInsurance} alt={"left public insurance"} height={'110'} width={"132"}/>
+                        <TextHeadStyled>
+                            あなたが公的保険で受け取れる金額
+                        </TextHeadStyled>
+                        <Image src={images.rightPublicInsurance} alt={"right public insurance"} height={'110'} width={"132"}/>
+                    </ModalHeadStyled>
+                    <DiedCard  data={data.whenHeDied}/>
+                    <InJuryCard data={data.illnessOrInjury} />
+                    <NotWordCard data={data.notWork} />
+                    <TroubleCard data={data.whenInTrouble} />
+                    <ChildCard data={data.child} />
+                </>
+            </Modal>
+        </main>
     )
 }
