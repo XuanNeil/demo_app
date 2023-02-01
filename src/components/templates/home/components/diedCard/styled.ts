@@ -1,7 +1,6 @@
 import styled from "styled-components";
-import {breakpoint} from "@/components/contants/breakpoint";
 
-export const DiedCardStyled = styled.div`
+export const CardStyled = styled.div`
   display: flex;
   flex: 1;
   border-radius: 12px;
@@ -16,7 +15,7 @@ export const DiedCardStyled = styled.div`
   }
 `;
 
-export const LeftDiedCardStyled = styled.div`
+export const LeftCardStyled = styled.div`
   display: flex;
   background: #EDF9F5;
   box-shadow: 2px 4px 10px rgba(30, 38, 46, 0.08);
@@ -38,7 +37,7 @@ export const TitleStyled = styled.p`
   word-break: break-word;
 `;
 
-export const RightDiedCardStyled = styled.div`
+export const RightCardStyled = styled.div`
   background: #FFFFFF;
   box-shadow: 2px 4px 10px rgba(30, 38, 46, 0.08);
   gap: 12px;
@@ -46,13 +45,12 @@ export const RightDiedCardStyled = styled.div`
   padding: 16px ;
 `;
 
-export const RightDiedCardNotCoveredStyled = styled.div`
+export const RightCardNotCoveredStyled = styled.div`
   background: #91B3A9;
   box-shadow: 2px 4px 10px rgba(30, 38, 46, 0.08);
   gap: 12px;
   flex: 2;
   padding: 12.5px 16px ;
-  border-radius: 0 12px 12px 0;
 `;
 export const BadgeListStyled = styled.div`
   display: flex;

@@ -4,17 +4,17 @@ import {
     WrapperDescriptionStyled,
     ButtonStyled,
     DescriptionStyled,
-    DiedCardStyled,
+    CardStyled,
     TitleStyled,
-    LeftDiedCardStyled,
-    RightDiedCardStyled,
+    LeftCardStyled,
+    RightCardStyled,
     SubContentStyled,
     SubContentValueStyled,
     SubContentMoneyStyled,
     BadgeListStyled,
     BadgeStyled,
-    WrapperSubContentStyled,
-} from "@/components/templates/home/components/diedCard/styled";
+    WrapperSubContentStyled, RightCardNotCoveredStyled,
+} from "@/components/templates/home/components/notWordCard/styled";
 import {ArrowIcon, NotWorkIcon} from "@/components/atoms/icons";
 import {INotWorkCardProps} from "@/components/templates/home/components/notWordCard/types";
 import {NotCovered} from "@/components/templates/home/components/notCovered";
@@ -25,31 +25,31 @@ export const NotWordCard: React.FC<INotWorkCardProps> = (props): JSX.Element => 
     if (!data) {
         return (
             <Card>
-                <DiedCardStyled>
-                    <LeftDiedCardStyled>
+                <CardStyled>
+                    <LeftCardStyled>
                         <NotWorkIcon width={"48px"}/>
                         <TitleStyled>
                             働けなくなった時
                         </TitleStyled>
-                    </LeftDiedCardStyled>
-                    <RightDiedCardStyled isNotCovered>
+                    </LeftCardStyled>
+                    <RightCardNotCoveredStyled>
                         <NotCovered />
-                    </RightDiedCardStyled>
-                </DiedCardStyled>
+                    </RightCardNotCoveredStyled>
+                </CardStyled>
             </Card>
         )
     }
 
     return (
         <Card>
-            <DiedCardStyled>
-                <LeftDiedCardStyled>
+            <CardStyled>
+                <LeftCardStyled>
                     <NotWorkIcon width={"48px"}/>
                     <TitleStyled>
                         働けなくなった時
                     </TitleStyled>
-                </LeftDiedCardStyled>
-                <RightDiedCardStyled>
+                </LeftCardStyled>
+                <RightCardStyled>
                     <BadgeListStyled>
                         {data?.tags?.map((tag, index) => (
                             <BadgeStyled key={index}>
@@ -76,8 +76,8 @@ export const NotWordCard: React.FC<INotWorkCardProps> = (props): JSX.Element => 
                             <ArrowIcon width={"16px"}/>
                         </ButtonStyled>
                     </DescriptionStyled>
-                </RightDiedCardStyled>
-            </DiedCardStyled>
+                </RightCardStyled>
+            </CardStyled>
         </Card>
     )
 }

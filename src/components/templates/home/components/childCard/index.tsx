@@ -4,17 +4,18 @@ import {
     WrapperDescriptionStyled,
     ButtonStyled,
     DescriptionStyled,
-    DiedCardStyled,
+    CardStyled,
     TitleStyled,
-    LeftDiedCardStyled,
-    RightDiedCardStyled,
+    LeftCardStyled,
+    RightCardStyled,
     SubContentStyled,
     SubContentValueStyled,
     SubContentMoneyStyled,
     BadgeListStyled,
     BadgeStyled,
-    WrapperSubContentStyled, RightDiedCardNotCoveredStyled,
-} from "@/components/templates/home/components/diedCard/styled";
+    WrapperSubContentStyled,
+    RightCardNotCoveredStyled,
+} from "@/components/templates/home/components/childCard/styled";
 import {ArrowIcon, ChildIcon} from "@/components/atoms/icons";
 import {NotCovered} from "@/components/templates/home/components/notCovered";
 import {IChildCardProps} from "@/components/templates/home/components/childCard/types";
@@ -25,31 +26,31 @@ export const ChildCard: React.FC<IChildCardProps> = (props): JSX.Element => {
     if (!data){
         return (
             <Card>
-                <DiedCardStyled>
-                    <LeftDiedCardStyled>
+                <CardStyled>
+                    <LeftCardStyled>
                         <ChildIcon width={"48px"}/>
                         <TitleStyled>
                             子どもが生まれる時
                         </TitleStyled>
-                    </LeftDiedCardStyled>
-                    <RightDiedCardNotCoveredStyled>
+                    </LeftCardStyled>
+                    <RightCardNotCoveredStyled>
                         <NotCovered />
-                    </RightDiedCardNotCoveredStyled>
-                </DiedCardStyled>
+                    </RightCardNotCoveredStyled>
+                </CardStyled>
             </Card>
         )
     }
 
     return (
         <Card>
-            <DiedCardStyled>
-                <LeftDiedCardStyled>
+            <CardStyled>
+                <LeftCardStyled>
                     <ChildIcon width={"48px"}/>
                     <TitleStyled>
                         子どもが生まれる時
                     </TitleStyled>
-                </LeftDiedCardStyled>
-                <RightDiedCardStyled>
+                </LeftCardStyled>
+                <RightCardStyled>
                     <BadgeListStyled>
                         {data?.tags?.map((tag, index) => (
                             <BadgeStyled key={index}>
@@ -79,8 +80,8 @@ export const ChildCard: React.FC<IChildCardProps> = (props): JSX.Element => {
                             <ArrowIcon width={"16px"}/>
                         </ButtonStyled>
                     </DescriptionStyled>
-                </RightDiedCardStyled>
-            </DiedCardStyled>
+                </RightCardStyled>
+            </CardStyled>
         </Card>
     )
 }

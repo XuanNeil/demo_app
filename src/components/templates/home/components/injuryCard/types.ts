@@ -1,6 +1,6 @@
 export interface IInJuryCardProps {
     data?: {
-        tags: string[];
-        price: number;
+        tags?: string[];
+        price?: number;
     }
 }

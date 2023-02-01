@@ -4,17 +4,17 @@ import {
     WrapperDescriptionStyled,
     ButtonStyled,
     DescriptionStyled,
-    DiedCardStyled,
+    CardStyled,
     TitleStyled,
-    LeftDiedCardStyled,
-    RightDiedCardStyled,
+    LeftCardStyled,
+    RightCardStyled,
     SubContentStyled,
     SubContentValueStyled,
     SubContentMoneyStyled,
     BadgeListStyled,
     BadgeStyled,
     WrapperSubContentStyled,
-    RightDiedCardNotCoveredStyled,
+    RightCardNotCoveredStyled,
 } from "@/components/templates/home/components/diedCard/styled";
 import {ArrowIcon, DiedIcon} from "@/components/atoms/icons";
 import {IDiedCardProps} from "@/components/templates/home/components/diedCard/types";
@@ -26,31 +26,31 @@ export const DiedCard: React.FC<IDiedCardProps> = (props): JSX.Element => {
     if (!data){
         return (
             <Card>
-                <DiedCardStyled>
-                    <LeftDiedCardStyled>
+                <CardStyled>
+                    <LeftCardStyled>
                         <DiedIcon width={"48px"}/>
                         <TitleStyled>
                             亡くなった時
                         </TitleStyled>
-                    </LeftDiedCardStyled>
-                    <RightDiedCardNotCoveredStyled>
+                    </LeftCardStyled>
+                    <RightCardNotCoveredStyled>
                         <NotCovered />
-                    </RightDiedCardNotCoveredStyled>
-                </DiedCardStyled>
+                    </RightCardNotCoveredStyled>
+                </CardStyled>
             </Card>
         )
     }
 
     return (
         <Card>
-            <DiedCardStyled>
-                <LeftDiedCardStyled>
+            <CardStyled>
+                <LeftCardStyled>
                     <DiedIcon width={"48px"}/>
                     <TitleStyled>
                         亡くなった時
                     </TitleStyled>
-                </LeftDiedCardStyled>
-                <RightDiedCardStyled>
+                </LeftCardStyled>
+                <RightCardStyled>
                     <BadgeListStyled>
                         {data?.tags?.map((tag, index) => (
                             <BadgeStyled key={index}>
@@ -80,8 +80,8 @@ export const DiedCard: React.FC<IDiedCardProps> = (props): JSX.Element => {
                             <ArrowIcon width={"16px"}/>
                         </ButtonStyled>
                     </DescriptionStyled>
-                </RightDiedCardStyled>
-            </DiedCardStyled>
+                </RightCardStyled>
+            </CardStyled>
         </Card>
     )
 }

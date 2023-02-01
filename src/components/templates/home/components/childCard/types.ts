@@ -1,6 +1,6 @@
 export interface IChildCardProps {
     data?: {
-        tags: string[];
-        price: number;
+        tags?: string[];
+        price?: number;
     }
 }

@@ -4,17 +4,18 @@ import {
     WrapperDescriptionStyled,
     ButtonStyled,
     DescriptionStyled,
-    DiedCardStyled,
+    CardStyled,
     TitleStyled,
-    LeftDiedCardStyled,
-    RightDiedCardStyled,
+    LeftCardStyled,
+    RightCardStyled,
     SubContentStyled,
     SubContentValueStyled,
     SubContentMoneyStyled,
     BadgeListStyled,
     BadgeStyled,
     WrapperSubContentStyled,
-} from "@/components/templates/home/components/diedCard/styled";
+    RightCardNotCoveredStyled,
+} from "@/components/templates/home/components/troubleCard/styled";
 import {ArrowIcon, TroubleIcon} from "@/components/atoms/icons";
 import {ITroubleCardProps} from "@/components/templates/home/components/troubleCard/types";
 import {NotCovered} from "@/components/templates/home/components/notCovered";
@@ -25,31 +26,31 @@ export const TroubleCard: React.FC<ITroubleCardProps> = (props): JSX.Element => 
     if (!data){
         return (
             <Card>
-                <DiedCardStyled>
-                    <LeftDiedCardStyled>
+                <CardStyled>
+                    <LeftCardStyled>
                         <TroubleIcon width={"48px"}/>
                         <TitleStyled>
                             障害状態になった時
                         </TitleStyled>
-                    </LeftDiedCardStyled>
-                    <RightDiedCardStyled isNotCovered>
+                    </LeftCardStyled>
+                    <RightCardNotCoveredStyled>
                         <NotCovered />
-                    </RightDiedCardStyled>
-                </DiedCardStyled>
+                    </RightCardNotCoveredStyled>
+                </CardStyled>
             </Card>
         )
     }
 
     return (
         <Card>
-            <DiedCardStyled>
-                <LeftDiedCardStyled>
+            <CardStyled>
+                <LeftCardStyled>
                     <TroubleIcon width={"48px"}/>
                     <TitleStyled>
                         障害状態になった時
                     </TitleStyled>
-                </LeftDiedCardStyled>
-                <RightDiedCardStyled>
+                </LeftCardStyled>
+                <RightCardStyled>
                     <BadgeListStyled>
                         {data?.tags?.map((tag, index) => (
                             <BadgeStyled key={index}>
@@ -76,8 +77,8 @@ export const TroubleCard: React.FC<ITroubleCardProps> = (props): JSX.Element => 
                             <ArrowIcon width={"16px"}/>
                         </ButtonStyled>
                     </DescriptionStyled>
-                </RightDiedCardStyled>
-            </DiedCardStyled>
+                </RightCardStyled>
+            </CardStyled>
         </Card>
     )
 }
