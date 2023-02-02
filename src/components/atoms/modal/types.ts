@@ -1,6 +1,6 @@
 import {ReactElement} from "react";
 
-export interface IUseModalProps {
+export interface IUseDisclosureProps {
     isOpen: boolean;
     onClose: () => void;
     onOpen?: () => void;

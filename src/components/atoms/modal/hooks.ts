@@ -1,7 +1,7 @@
 import {useCallback, useState} from "react";
-import {IUseModalProps} from "@/components/molecules/modal/types";
+import {IUseDisclosureProps} from "@/components/atoms/modal/types";
 
-export const useModal = (): IUseModalProps => {
+export const useDisclosure = (): IUseDisclosureProps => {
     const [isOpen, setIsOpen] = useState<boolean>(false);
 
     const onOpen = useCallback(() => {

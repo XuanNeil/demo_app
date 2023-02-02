@@ -12,8 +12,8 @@ export const ChildIcon = (props: IconProps) => (
         <circle cx="17.9999" cy="14.0007" r="0.666667" fill="#E0E0E0" />
         <circle cx="21.9999" cy="14.0007" r="0.666667" fill="#E0E0E0" />
         <path d="M12 26.6673L28 21.334V25.334L12 30.6673V26.6673Z" fill="#F2C94C" />
-        <path d="M30.6667 19.9993L34.0001 24.666M30.6667 17.3327L36.6667 19.3327M30.6667 14.666L36.0001 10.666" stroke="#F2C94C" stroke-width="1.33333" stroke-linecap="round" />
-        <circle cx="20.0001" cy="17.3333" r="0.666667" stroke="#E0E0E0" stroke-width="1.33333" />
+        <path d="M30.6667 19.9993L34.0001 24.666M30.6667 17.3327L36.6667 19.3327M30.6667 14.666L36.0001 10.666" stroke="#F2C94C" strokeWidth="1.33333" strokeLinecap="round" />
+        <circle cx="20.0001" cy="17.3333" r="0.666667" stroke="#E0E0E0" strokeWidth="1.33333" />
     </svg>
 )
 
